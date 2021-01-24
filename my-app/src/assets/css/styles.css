@@ -1,0 +1,222 @@
+/* You can add global styles to this file, and also import other style files */
+
+body
+{
+    font-family: 'Futura' , GlacialIndifference ! important;
+    font-family: sans-serif;
+    font-size: 18px;
+}
+.app-heading {
+    color: #31708f;
+    font-weight: normal;
+    font-size: 1.7em;
+    margin-top: 12px;
+    font-family: georgia;
+}
+.modal-header{
+    border-radius: 5px;
+    /*color:white;*/
+}
+/*.dashboard-header
+{
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
+}
+.dashboard-header h3
+{
+    padding: 15px;
+    margin: 0px;
+    color: #777;
+    font-size: 18px;
+}*/
+.leftmenubar
+{
+    position: fixed;
+    height: 100%;
+}
+.leftmenubar .main-ul
+{
+    width: 100%;
+    list-style-type: none;
+    min-height: 445px;
+    height:100vh;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+    background-color: #f8f8f8;
+    border-right: 1px solid #e7e7e7;
+}
+.leftmenubar .main-ul li
+{
+    border-bottom: 1px solid #e7e7e7;
+}
+.leftmenubar .main-ul li a
+{
+    padding: 10px 15px;
+    color: #115086;
+    text-decoration: none;
+    display: block;
+    background-color: #f8f8f8;
+    font-size: 18px;
+}
+.leftmenubar .sub-ul
+{
+    list-style-type: none;
+    margin: 0px;
+    padding:0px;
+    background-color: #f8f8f8;
+}
+.leftmenubar .sub-ul li
+{
+    border: 0px;
+}
+.leftmenubar .sub-ul li a
+{
+    color: #337ab7;
+    text-decoration: none;
+    display: block;
+    background-color: #f8f8f8;
+    font-size: 14px;
+    padding-left:40px;
+    }
+.leftmenubar .main-ul li a:hover
+{
+    background-color:#eee;
+    }
+.sub-ul
+{
+    display:none;
+    }
+.light-gray
+{
+    background-color:#eee !important;
+    }
+.nopadding{
+    padding:0px;
+}
+.heading-gap{
+    margin-top:10px;
+}
+.rightmargin{
+    margin-right:15px;
+}
+.leftmargin{
+    margin-left:15px;
+}
+.billing-item-list{
+    list-style-type: none;
+    padding:0px;
+}
+.billing-item-list li{
+    border:1px solid #ccc;
+    padding:10px;
+    margin-bottom:5px;
+    float: left;
+    width: 100%;
+}
+.tiny-leftmargin{
+    margin-left:5px;
+}
+.total-billing{
+    border-bottom:1px solid #ccc;
+}
+.tiny-rightmargin{
+    margin-right:5px;
+}
+.medium-leftmargin{
+    margin-left:10px;
+}
+.medium-rightmargin{
+    margin-right:10px;
+}
+.push-up{
+    margin-top: 5px;
+}
+.cursor-pointer{
+    cursor:pointer;
+}
+.hide{
+    display:none;
+}
+.admin{
+    padding: 13px;
+    margin: 0px;
+    color: #777;
+    font-size: 18px;
+}
+.center-align{
+    text-align: center;
+}
+.align-left{
+    text-align: left;
+}
+/*table td .fa{
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}*/
+/*colors*/
+.red {
+    color: red;
+    opacity: 0.8;
+}
+.blue {
+    color: blue;
+    opacity: 0.8;
+}
+.dark-red{
+    color: darkred;
+}
+.gray{
+    color: gray;
+}
+.panel-primary{
+    opacity: 0.9;
+}
+
+.break-all{
+    word-break: break-all;
+}
+
+.spinner {
+  margin: 0 auto;
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #337ab7;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}

@@ -1,0 +1,82 @@
+<div class="col-xs-8">
+  <div class="panel panel-primary heading-gap">
+    <div class="panel-heading">User Details</div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th style="width:10%">Action</th>
+        <th style="width:30%">Firstname</th>
+        <th style="width:30%">Lastname</th>
+        <th style="width:30%">Username</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td style="width:10%" class="center-align">
+          <i class="fa fa-pencil cursor-pointer blue tiny-rightmargin" (click)="editUser(user)"></i>
+          <i class="fa fa-times cursor-pointer red" (click)="deleteUser(user)"></i>
+        </td>
+        <td style="width:30%">{{user.firstname}}</td>
+        <td style="width:30%">{{user.lastname}}</td>
+        <td style="width:30%">{{user.username}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr *ngIf="showProgress">
+        <td colspan="4">
+          <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="center-align gray" *ngIf="users.length == 0 && showProgress == false">
+        <td colspan="4">No Record Found</td>
+      </tr>
+    </tfoot>
+  </table>
+  </div>
+</div>
+<div class="col-xs-4">
+  <div class="panel panel-primary heading-gap">
+    <div class="panel-heading">Add/Edit User</div>
+    <div class="panel-body">
+  <form [formGroup]="userForm" (ngSubmit)="addUser()">
+    <input type="hidden" [(ngModel)]="user.id" formControlName="id">
+    <div class="form-group">
+      <label for="name">Firstname</label>
+      <input type="text" class="form-control" id="firstname" [(ngModel)]="user.firstname" formControlName="firstname" required>
+      <div *ngIf="formErrors.firstname" class="alert alert-danger">
+        {{ formErrors.firstname }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name">Lastname</label>
+      <input type="text" class="form-control" id="lastname" [(ngModel)]="user.lastname" formControlName="lastname" required>
+      <div *ngIf="formErrors.lastname" class="alert alert-danger">
+        {{ formErrors.lastname }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name">Username</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="user.username" formControlName="username" [attr.disabled]="isDisabled? '' : null"
+        required>
+      <div *ngIf="formErrors.username" class="alert alert-danger">
+        {{ formErrors.username }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name">Password</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="user.password" formControlName="password" required>
+      <div *ngIf="formErrors.password" class="alert alert-danger">
+        {{ formErrors.password }}
+      </div>
+    </div>
+
+    <button class="btn btn-default pull-right tiny-rightmargin" type="button" (click)="newForm()">Clear</button>
+    <button class="btn btn-success pull-right tiny-rightmargin" type="submit" [disabled]="!userForm.valid">{{addButtonText}}</button>
+  </form>
+    </div>
+  </div>
+</div>

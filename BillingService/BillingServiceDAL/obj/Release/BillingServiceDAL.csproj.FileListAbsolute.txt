@@ -1,0 +1,13 @@
+D:\Programs\BillingService\BillingServiceDAL\obj\Release\BillingServiceDAL.csprojResolveAssemblyReference.cache
+D:\Programs\BillingService\BillingServiceDAL\bin\Release\BillingServiceDAL.dll
+D:\Programs\BillingService\BillingServiceDAL\bin\Release\BillingServiceDAL.pdb
+D:\Programs\BillingService\BillingServiceDAL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Programs\BillingService\BillingServiceDAL\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Programs\BillingService\BillingServiceDAL\obj\Release\BillingServiceDAL.dll
+D:\Programs\BillingService\BillingServiceDAL\obj\Release\BillingServiceDAL.pdb
+D:\Work\angular\BillingApp\BillingService\BillingServiceDAL\bin\Release\BillingServiceDAL.dll
+D:\Work\angular\BillingApp\BillingService\BillingServiceDAL\bin\Release\BillingServiceDAL.pdb
+D:\Work\angular\BillingApp\BillingService\BillingServiceDAL\obj\Release\BillingServiceDAL.csprojAssemblyReference.cache
+D:\Work\angular\BillingApp\BillingService\BillingServiceDAL\obj\Release\BillingServiceDAL.csproj.CopyComplete
+D:\Work\angular\BillingApp\BillingService\BillingServiceDAL\obj\Release\BillingServiceDAL.dll
+D:\Work\angular\BillingApp\BillingService\BillingServiceDAL\obj\Release\BillingServiceDAL.pdb

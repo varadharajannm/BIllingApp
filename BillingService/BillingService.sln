@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillingService", "BillingService\BillingService.csproj", "{0876F97C-A47B-4271-966A-87696C984D2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillingServiceDAL", "BillingServiceDAL\BillingServiceDAL.csproj", "{914873AA-5B76-4140-8927-E08C6827B119}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0876F97C-A47B-4271-966A-87696C984D2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0876F97C-A47B-4271-966A-87696C984D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0876F97C-A47B-4271-966A-87696C984D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0876F97C-A47B-4271-966A-87696C984D2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{914873AA-5B76-4140-8927-E08C6827B119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{914873AA-5B76-4140-8927-E08C6827B119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{914873AA-5B76-4140-8927-E08C6827B119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{914873AA-5B76-4140-8927-E08C6827B119}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;packages\Unity.Interception.2.1.505.0\lib\NET35;packages\EnterpriseLibrary.Common.5.0.505.0\lib\NET35
+	EndGlobalSection
+EndGlobal

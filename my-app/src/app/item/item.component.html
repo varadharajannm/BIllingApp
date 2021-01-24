@@ -1,0 +1,71 @@
+<div class="col-xs-8"> 
+  <div class="panel panel-primary heading-gap">
+    <div class="panel-heading">Item Details</div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th style="width:10%;">Action</th>
+        <th style="width:40%;">Name</th>
+        <th style="width:35%;">Description</th>
+        <th style="width:15%;">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items" id={{item?.id}}>
+        <td style="width:10%;" class="center-align">
+          <i class="fa fa-pencil cursor-pointer blue tiny-rightmargin" aria-hidden="true" (click)="editItem(item)"></i>
+          <i class="fa fa-times cursor-pointer red" aria-hidden="true" (click)="deleteItem(item)"></i>
+        </td>
+        <td class="break-all" style="width:40%;">{{item.name}}</td>
+        <td class="break-all" style="width:35%;">{{item.desc}}</td>
+        <td style="width:15%;">{{item.price}}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr *ngIf="showProgress">
+        <td colspan="4">
+          <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </td>
+      </tr>
+      <tr class="center-align gray" *ngIf="items.length == 0 && showProgress == false">
+        <td colspan="4">No Record Found</td>
+      </tr>
+    </tfoot>
+  </table>
+  </div>
+</div>
+<div class="col-xs-4">
+  <div class="panel panel-primary heading-gap">
+    <div class="panel-heading">Add/Edit Item</div>
+    <div class="panel-body">
+  <form [formGroup]="itemForm" (ngSubmit)="addItem()">
+    <input type="hidden" [(ngModel)]="item.id" formControlName="id" />
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input attr.itemid="{{item?.id}}" type="text" asyncValidator class="form-control" id="name" [(ngModel)]="item.name" formControlName="name"
+        required>
+      <div *ngIf="formErrors.name" class="alert alert-danger">
+        {{ formErrors.name }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="desc">Description</label>
+      <textarea class="form-control" rows="3" id="desc" [(ngModel)]="item.desc" formControlName="desc"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="number" class="form-control" id="price" min=1 [(ngModel)]="item.price" formControlName="price" required>
+      <div *ngIf="formErrors.price" class="alert alert-danger">
+        {{ formErrors.price }}
+      </div>
+    </div>
+    <button class="btn btn-success" type="submit" [disabled]="!itemForm.valid">{{addButtonText}}</button>
+    <button class="btn btn-default" type="button" (click)="newForm()">Clear</button>
+  </form>
+  </div>
+  </div>
+</div>

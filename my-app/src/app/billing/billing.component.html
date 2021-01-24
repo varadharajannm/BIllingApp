@@ -1,0 +1,86 @@
+<div class="col-xs-7 col-lg-7" style="border-right:1px solid #ccc;height:90vh;padding-top:15px;">
+  <div class="col-xs-12 nopadding">
+    <div class="pull-xs-left push-down crecent-projects-inputs">
+      <input id="txtItemAutoComplete" ngui-auto-complete [source]="billingItems" (valueChanged)="onSelectItem($event)" [list-formatter]="autocompleListFormatter"
+        [value-formatter]="myValueFormatter" no-match-found-text="{{noItemFound}}" value-property-name="id" display-property-name="name"
+        placeholder="Search items here..." class="form-control">
+    </div>
+    <div class="col-xs-12 nopadding" style="border-top:1px solid #ccc;margin-top:5px;max-height:550px;overflow-y:auto;">
+      <ul class="billing-item-list" style="margin-top:15px;">
+        <li *ngFor="let item of checkoutItems">
+          <div class="pull-left break-all" style="margin-top:2px;">
+            <i class="fa fa-times red cursor-pointer" (click)="removeItem(item)"></i>
+            <label class="medium-leftmargin">{{item.name}} (Rs.{{item.price}})</label>
+          </div>
+          <div class="pull-right">
+            <label class="pull-left tiny-rightmargin push-up cursor-pointer" (click)="decrement(item)"><i style="color:#847b7b;" class="fa fa-lg fa-caret-left" >
+      </i></label>
+            <input [(ngModel)]="item.quantity" type="text" maxlength="4" class="form-control pull-left tiny-rightmargin" style="width:50px;text-align: center;"
+            />
+            <label class="push-up cursor-pointer" (click)="increment(item)"><i  style="color:#847b7b;" class="fa fa-lg fa-caret-right"></i></label>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="col-xs-5 col-lg-5 heading-gap" style="height:90vh">
+
+  <div class="">
+    <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>
+    <button type="button" class="btn btn-success" [disabled]="this.checkoutItems.length==0" data-toggle="modal" data-target="#checkOutModal" (click)="clearCheckoutModal()">Proceed Checkout</button>
+  </div>
+
+<div class="panel panel-primary heading-gap">
+    <div class="panel-heading">Items Cart</div>
+    <div style="overflow-y:auto;max-height:500px;">
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th style="width:10%">#</th>
+        <th style="width:60%">Item</th>
+        <th style="width:10%">Qty</th>
+        <th style="width:20%">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let chkItem of checkoutItems; let i=index">
+        <td style="width:10%">{{i+1}}</td>
+        <td style="width:60%" class="break-all">{{chkItem.name}}</td>
+        <td style="width:10%" class="break-all">{{chkItem.quantity}}</td>
+        <td style="width:20%" class="break-all">Rs.{{chkItem.quantity*chkItem.price}}</td>
+      </tr>
+      <tr class="center-align gray" *ngIf="checkoutItems.length == 0">
+        <td colspan="3">No Item Selected</td>
+      </tr>
+      <tr>
+        <th colspan="3">Total Amount</th>
+        <th>Rs.{{getTotal()}}</th>
+      </tr>
+    </tbody>
+  </table>
+    </div>
+  </div>
+
+  <div class="modal fade" id="checkOutModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Proceed Checkout</h4>
+        </div>
+        <div class="modal-body">
+          <textarea [(ngModel)]="comments" class="form-control" placeholder="Comments if any" style="height: 120px;"></textarea>
+        </div>
+        <div class="modal-footer">
+          <span class="pull-left blue" id="spnModalSuccess"></span>
+          <span class="pull-left red align-left" id="spnModalError"></span>
+          <button class="btn btn-success" (click)="proceedCheckout()">Print</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
